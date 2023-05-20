@@ -18,6 +18,16 @@ form.addEventListener("input", throttle((e) => {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const formInputOnSubmit = {
+        email: input.value,
+        message: textarea.value,
+    }
+
+    if (!formInputOnSubmit.email || !formInputOnSubmit.message)
+        return;
+
+    console.log(formInputOnSubmit);
+
     form.reset();
     localStorage.removeItem("feedback-form-state");
 });
