@@ -15,7 +15,7 @@ player.on('timeupdate', throttle((data) => {
 function checkLocalStorage () {
     const currentTime = localStorage.getItem("videoplayer-current-time");
     if (!currentTime)
-        return;
+        return 0;
         
     return JSON.parse(currentTime);
 }
